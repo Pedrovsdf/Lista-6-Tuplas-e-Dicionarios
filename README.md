@@ -1,2 +1,1 @@
-# Lista-6-Tuplas-e-Dicionarios
-Questões de Tuplas e Dicionários
+As questões vão escalonando, então as com numerações mais altas são mais difíceis.
