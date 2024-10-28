@@ -1,0 +1,75 @@
+import operator
+
+possui = {'trigo': 5, 'fermento': 5, 'manteiga': 5, 'ovos': 5, 'batata': 5,
+          'arroz': 5, 'siri': 5, 'pao': 5, 'tomate': 5, 'alface': 5,
+          'picles': 5, 'queijo': 5}
+
+valores = {'trigo': 3, 'fermento': 2, 'manteiga': 6, 'ovos': 2, 'batata': 4,
+           'arroz': 3, 'siri': 8, 'pao': 2, 'tomate': 2, 'alface': 1,
+           'picles': 3, 'queijo': 5}
+
+receitas = {'hamburguer de siri': ('siri', 'pao', 'alface', 'tomate', 'queijo', 'picles'),
+            'pizza de siri': ('siri', 'trigo', 'fermento', 'ovos', 'queijo'),
+            'siri frito': ('siri', 'manteiga'),
+            'siri a parmegiana': ('siri', 'trigo', 'ovos', 'queijo', 'tomate')}
+
+receitas_valores = {'hamburguer de siri': 24, 'pizza de siri': 42,
+                    'siri frito': 15, 'siri a parmegiana': 24}
+
+qtd_pedidos = {'hamburguer de siri': 0, 'pizza de siri': 0,
+               'siri frito': 0, 'siri a parmegiana': 0}
+
+novos = {}
+
+#print(receitas['hamburguer de siri'][1])
+#print(len(receitas['hamburguer de siri']))
+
+parou = 0
+caixa = 40
+custos = 0
+
+while not parou:
+    try:
+        pedido = input()
+    except EOFError:
+        parou = 1
+
+    if not parou:
+        if pedido in receitas:
+            for i in receitas[pedido]:
+                if possui[i] == 0:
+                    possui[i] += 4
+                    custos += int(valores[i] * 4)
+                possui[i] -= 1
+            caixa += receitas_valores[pedido]
+            qtd_pedidos[pedido] += 1
+            print(f'{pedido} saindo...')
+        else:
+            if pedido in novos:
+                novos[pedido] += 1
+            else:
+                novos[pedido] = 1
+            if novos[pedido] > 2:
+                print(f'Atendendo demandas, {pedido} é a mais nova adição ao cardápio do Siri Cascudo.')
+                txt = input()
+                tupla = tuple(map(str, txt.split(' ')))
+                receitas[pedido] = tupla
+                receitas_valores[pedido] = 0
+                for i in tupla:
+                    receitas_valores[pedido] += valores[i]
+                receitas_valores[pedido] += 5
+                qtd_pedidos[pedido] = 0
+                del novos[pedido]
+            else:
+                print(f'{pedido} ainda não é uma opção disponível.')
+
+print('##### Fim do expediente #####')
+lucro = caixa - 40 - custos
+print(f'O lucro obtido no dia de hoje foi de R${lucro}.')
+
+pedidos_ordenados = sorted(qtd_pedidos.items(), key=operator.itemgetter(1))
+if pedidos_ordenados[-1][0] == 'hamburguer de siri':
+    print('O bom e tradicional hambúrguer de siri, líder em vendas, nunca será superado!')
+else:
+    print(f'{pedidos_ordenados[-1][0].capitalize()} está fazendo sucesso entre os clientes, '
+          f'ultrapassando até mesmo o lendário hambúrguer de siri.')

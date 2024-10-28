@@ -1,0 +1,27 @@
+lista = input()
+lista = lista.replace(" ", "")
+lista = lista[1:]
+lista = lista[:-1]
+lista = lista.split(',')
+dicionario = {}
+valor = int(input())
+h = 0
+for i in range(len(lista)):
+    for j in range(len(lista)):
+        if i == j:
+            pass
+        else:
+            soma = int(lista[i]) + int(lista[j])
+            txt = str(i) + ' e ' + str(j)
+            dicionario[soma] = txt
+
+if valor in dicionario:
+    dupla = dicionario[valor]
+    dupla = dupla.split(' e ')
+    dupla[0], dupla[1] = int(dupla[0]), int(dupla[1])
+    dupla = sorted(dupla)
+    #primeiro = lista.index(str(dupla[0]))
+    #segundo = lista.index(str(dupla[1]))
+    lista_dupla = [dupla[0], dupla[1]]
+    lista_dupla = sorted(lista_dupla)
+    print(lista_dupla)

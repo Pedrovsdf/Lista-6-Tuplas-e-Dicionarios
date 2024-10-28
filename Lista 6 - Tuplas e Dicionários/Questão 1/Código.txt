@@ -1,0 +1,23 @@
+parou = 0
+pokedex = {}
+
+while not parou:
+    try:
+        txt = input()
+        lista = txt.split()
+    except EOFError:
+        parou = 1
+    
+    if not parou:
+        if len(lista) == 2 and (lista[0] == 'ADD' or lista[0] == 'DESC'):
+            comando = lista[0]
+            poke = lista[1]
+            if comando == 'ADD':
+                if poke in pokedex:
+                    print('Pokémon já adicionado na Pokédex')
+                else:
+                    msg = input()
+                    pokedex[poke] = msg
+                    print('Pokémon adicionado com sucesso')
+            elif comando == 'DESC':
+                print(pokedex.get(poke, 'Ainda não há registro desse Pokémon'))

@@ -1,0 +1,62 @@
+Ao chegar na loja de antiguidades do Tio em mais um dia normal, Jackie Chan descobre que sua sobrinha, Jade, foi sequestrada pelos malignos integrantes da Mão Negra. Sabendo da sua capacidade, ele não hesita em bolar um plano para resgatá-la, mas tem que ser cauteloso, pois a Mão Negra também possui talismãs.
+
+Jack pede ao Tio para reunir informações sobre as forças dos vilões e, então, pede sua ajuda para descobrir se consegue derrotar os chefões e resgatar Jade com os talismãs que possui.
+
+piccolo_gohan
+
+Cada talismã afeta as habilidades de seu usuário, e possui também um requisito para ser conquistado.
+Jackie começa com as habilidades dos talismãs que possui.
+Um chefão é considerado derrotado se Jack possui a habilidade requisito do talismã do vilão
+Ao derrotar um vilão, Jack adquire seu talismã
+Sempre que Jackie obtém um talismã, obtém também sua habilidade.
+Jackie só enfrenta cada chefão uma vez, com as habilidades que tem no momento.
+Cada habilidade é única, logo cada talismã depende exclusivamente de outro para ser conquistado, seguindo a tabela abaixo.
+Tabela
+
+Input
+
+O programa deverá receber um inteiro inicial que representa a quantidade de talismãs já possuídos por Jackie.
+
+N
+
+Seguido de N nomes de talismãs.
+
+talisma_1
+
+…
+
+talisma_n
+
+E também outro inteiro, representando a quantidade de adversários.
+
+M
+
+Seguido de M nomes de talismãs dos adversários.
+
+talisma_1
+
+…
+
+talisma_m
+
+Obs.: Só serão utilizados os nomes dos talismãs existentes.
+
+Output
+
+A saída será composta de M strings, uma para cada chefe enfrentado
+
+Caso o talismã tenha sido conquistado:
+
+Boa! O talisma do {nome_talisma} vai ser nosso!
+
+Caso contrário:
+
+Nao vai dar, melhor ir atras do talisma do {nome_talisma_faltando} antes.
+
+Ao final, se Jackie conseguiria derrotar todos os vilões:
+
+Esse plano funciona, vamos agora!
+
+Caso contrário:
+
+Que mau dia!! Melhor pensarmos num plano de fuga

@@ -1,0 +1,27 @@
+import operator
+
+qtd = int(input())
+dc_atk = {}
+dc_def = {}
+nomes = []
+
+for i in range(qtd):
+    carta = input()
+    carta_new = carta.split()
+    ataque = carta_new[-2]
+    defesa = carta_new[-1]
+    remover = len(ataque + defesa) + 2
+    nome = carta[0:(len(carta) - remover)]
+
+    nomes.append(nome)
+
+    dc_atk[nome] = int(ataque)
+    dc_def[nome] = int(defesa)
+
+ataque_ordenado = sorted(dc_atk.items(), key=operator.itemgetter(1))
+defesa_ordenada = sorted(dc_def.items(), key=operator.itemgetter(1))
+
+print(f'Carta com maior poder de ataque: {ataque_ordenado[-1][0]}')
+print(f'Ataque: {ataque_ordenado[-1][1]}\n')
+print(f'Carta com maior poder de defesa: {defesa_ordenada[-1][0]}')
+print(f'Defesa: {defesa_ordenada[-1][1]}')

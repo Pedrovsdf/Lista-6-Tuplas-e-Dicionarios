@@ -1,0 +1,20 @@
+Kuroko, como sempre, está buscando uma forma de melhorar seus passes e, com isso, ele precisa de sua ajuda. Quando está em campo, Karoko consegue ver todos seus companheiros e marcar suas posições. Seu papel é desenvolver um programa que, baseado no número dos companheiros e no número alvo que deseja, retorne a posição dos 2 jogadores que a soma dos seus números seja igual ao número alvo e então melhorar sua precisão nos ataques. Não haverá o caso de mais de uma dupla com a soma igual ao número alvo, então não se preocupe com isso.
+
+Obs.: Para resolução dessa questão será obrigatório o uso de dicionários
+Input
+
+O Input terá duas linhas:
+
+A primeira será uma lista de inteiros que representa o número dos companheiros do Kuroko
+
+[p1, p2 ... px]
+
+A segunda será o número alvo que deve ser obtido ao somar o número de 2 companheiros
+
+target
+
+Output
+
+Uma lista com a posição dos dois companheiros, em ordem crescente, na lista de input
+
+[pos_companheiro1, pos_companheiro2]

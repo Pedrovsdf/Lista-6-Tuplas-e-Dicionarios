@@ -1,0 +1,29 @@
+talismas = {'Carneiro': 'Cao', 'Cao': 'Touro', 'Touro': 'Cobra',
+            'Cobra': 'Tigre', 'Tigre': 'Carneiro', 'Coelho': 'Macaco',
+            'Macaco': 'Porco', 'Porco': 'Dragao', 'Dragao': 'Cavalo',
+            'Cavalo': 'Galo', 'Galo': 'Rato', 'Rato': 'Coelho'}
+
+possui = []
+perdeu = 0
+qtd_possui = int(input())
+
+for i in range(qtd_possui):
+    novo = input()
+    possui.append(novo)
+
+qtd_inimigos = int(input())
+
+for i in range(qtd_inimigos):
+    inimigo = input()
+    requisito = talismas[inimigo]
+    if requisito in possui:
+        print(f'Boa! O talisma do {inimigo} vai ser nosso!')
+        possui.append(inimigo)
+    else:
+        print(f'Nao vai dar, melhor ir atras do talisma do {requisito} antes.')
+        perdeu = 1
+
+if perdeu:
+    print('Que mau dia!! Melhor pensarmos num plano de fuga.')
+else:
+    print('Esse plano funciona, vamos agora!')

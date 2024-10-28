@@ -1,0 +1,34 @@
+personagens = {'Bobby': '8-1', 'Diana': '12-3', 'Eric': '8-0',
+               'Hank': '6-1', 'Presto': '4-3',
+               'Sheila': '6-3', 'Uni': '2-3'}
+parou = 0
+
+inimigo = input()
+if inimigo == 'Vingador':
+    vida_inimigo = 30
+elif inimigo == 'Tiamat':
+    vida_inimigo = 20
+elif inimigo == 'Vingador das Sombras':
+    vida_inimigo = 14
+else:
+    vida_inimigo = 9
+
+turnos = int(input())
+
+while not parou:
+    atacante = input()
+    if atacante == 'Mestre dos Magos':
+        print('Muito obrigado amigo, que nos vejamos novamente um dia')
+        parou = 1
+    else:
+        equips = (personagens[atacante]).split('-')
+        dano = int(equips[0])
+        armadura = int(equips[1])
+        vida_inimigo -= dano
+        turnos -= 1 + armadura
+        if vida_inimigo <= 0:
+            print(f'{atacante} executou o ultimo golpe em {inimigo}, estamos livres!')
+            parou = 1
+        elif turnos <= 0:
+            print(f'Oh nao, {inimigo} e muito forte, este e o fim!')
+            parou = 1

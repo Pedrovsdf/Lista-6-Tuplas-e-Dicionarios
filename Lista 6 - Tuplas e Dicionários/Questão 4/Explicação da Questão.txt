@@ -1,0 +1,31 @@
+Yugi está organizando seu baralho mas está sempre se perdendo no meio de tantas cartas e então resolveu pedir sua ajuda para que você crie um programa que dado seu baralho você deve retornar algumas informações do mesmo.
+
+https://i.pinimg.com/originals/4b/20/42/4b2042b23c1e26e0d61553f60b9a9bda.gif
+
+O seu programa deve ser capaz de salvar todas as cartas que ele fornecer e então retornar a carta com maior poder de ataque e a carta com maior poder de defesa.
+
+Obs: É obrigatório o uso de dicionário e tuplas
+
+Input
+
+Você receberá um inteiro N representando a quantidade de cartas que ele quer que você organize pra ele
+
+N
+
+Seguindo de N entradas contendo o nome, poder de ataque e poder de defesa de cada carta no formato:
+
+nome ataque defesa
+
+Obs: O nome pode ser composto
+
+Output
+
+Você deverá imprimir o seguinte relatório:
+
+Carta com maior poder de ataque: {nome_da_carta_ataque}
+
+Ataque: {ataque_da_carta}
+
+Carta com maior poder de defesa: {nome_da_carta_defesa}
+
+Defesa: {defesa_da_carta}

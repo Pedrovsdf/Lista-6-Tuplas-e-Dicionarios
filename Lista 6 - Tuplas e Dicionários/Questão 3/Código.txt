@@ -1,0 +1,20 @@
+qtd = int(input())
+piccolo = input()
+piccolo = piccolo.split()
+gohan = input()
+gohan = gohan.split()
+dicionario = {}
+
+j = 0
+
+for i in gohan:
+    if i in piccolo:
+        piccolo.pop(piccolo.index(i))
+        dicionario[i + str(j)] = i
+
+    j += 1
+
+if len(gohan) == len(dicionario):
+    print('Dale Gohan!')
+else:
+    print('Ih, nao foi agora, Gohan! Vamos tentar de novo semana que vem.')
